@@ -26,9 +26,9 @@ def main():
     # This is much easier than using the urllib.request library
     cards = resp.json().get('cards')
     
-    with open("4DE_cards.set", "w") as myfile:
+    with open("4DE_cards.txt", "w") as myfile:
         for card in cards:
-            print(card.get)
+            print(f"{card.get('name')}", file=myfile)
 
 if __name__ == "__main__":
     main()
